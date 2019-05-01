@@ -11,21 +11,28 @@
 </head>
 
 <body>
-
     <main class="container">
-        <h1>Lista de tarefas</h1>
-        <input type="text" id="userInput" placeholder="Digite uma nova tarefa...">
-        <button type="button" onclick="btnAdd()" class="btn">Add</button> 
+        <h2>Lista de tarefas</h2>
 
-        <ul id="userList">
-        </ul>
+        <!-- Input -->
 
-        <div class="btnContainer" id="btnContainer">
-            <span class="btnBranco" id="select">Marcar todas como concluídas</span>
-            <span class="btnBranco" id="delete">Limpar lista</span>
-        </div>
+        <form id="form">
+            <p id="inputAlert"></p>
+            <input type="text" id="userInput" placeholder="Digite uma nova tarefa...">
+            <button type="button" onclick="btnAdd()" class="btn">Add</button> 
+        </form>
+
+        <!-- Lista de tarefas do usuário -->
+        <section id="listSelect" class="containerList">
+            <ul id="userList"></ul>
+        </section>
+        <!-- Botões para selecionar e limpar -->    
+
+        <footer class="btnContainer" id="btnContainer">
+            <span class="btn" id="checkAll">Marcar todas como concluídas</span>
+            <span class="btn" id="eraseAll">Limpar lista</span>
+        </footer>
     </main>
-
     <script src="./assets/script.js"></script>
 </body>
 </html>
