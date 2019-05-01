@@ -1,0 +1,77 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(90deg, #e0c3fc, #8ec5fc);
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+
+/* Estilo dos itens da lista */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #ffffff;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+/* Cor do background (on hover) */
+ul li:hover {
+    background: #ddd;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #ffffff;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.btn {
+    background-color: #ba7af8;
+    padding: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.btnBranco {
+    color: #ba7af8;
+    padding: 20px;
+    
+}
+
+.btn:hover {
+    background-color: #421370;
+}
+
+#userInput {
+    padding: 40px;
+    font-size: 20px;
+}
+
+.myList {
+    display: flex;
+    background-color: #ffffff;
+    width: 80%;
+}
