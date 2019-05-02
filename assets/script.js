@@ -64,7 +64,6 @@ function btnAdd() {
         item.remove();
     });
 
-
     // Riscar itens feitos
     item.addEventListener('click', function () {
         item.className = "checked"
@@ -91,4 +90,31 @@ function btnAdd() {
 
         // Limpar o input
         userInput.value = "";
+
+
+        item.setAttribute("draggable", true);
+
+        //Seleciona o evento de click, define que o elemento pode ser arrastado (guarda a classe numa variável)
+        item.addEventListener("dragstart", dragStart);
+
+        //Seleciona a localização do evento de click e direciona para inserção depois do proximo elemento
+        item.addEventListener("dragover", dragOver);
+
+        // Finaliza o momvimento
+        item.addEventListener("dragend", dragEnd);
+
+
+        function dragStart(event) {
+            dragging = event.target.closest("li");
+        }
+
+        function dragOver(event) {
+            const location = event.target.closest("li"); // pegar pela classe!!
+            this.parentNode.insertBefore(dragging, location);// this.parentNode equivale a class timeline
+        }
+        function dragEnd() {
+            dragging = null;
+            //usamos o dragging = null para dizer que deve parar o movimento
+
+        }
 }

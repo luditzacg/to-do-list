@@ -30,21 +30,23 @@ ul {
 /* Estilo dos itens da lista */
 ul li {
     cursor: pointer;
-    position: relative;
     padding: 12px 8px 12px 40px;
     font-size: 18px;
     transition: 0.2s;
+   
 }
 li {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    
     
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    margin-right: 20px;
+    
 }
 
 /* Estilo do botão de deletar */
@@ -99,13 +101,14 @@ a {
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .btnFooter {
     border-style: none;
-    background-color: #ba7af8;
-    color: #ffffff;
+    background-color: #ffffff;
+    color:  #ba7af8;
     padding: 1rem;
     text-transform: uppercase;
     border-radius: 5px;
@@ -116,6 +119,7 @@ a {
 
 .btnFooter:hover {
     background-color: #421370;
+    color: #ffffff;
 }
 
 
