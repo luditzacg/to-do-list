@@ -1,39 +1,37 @@
 
     <!DOCTYPE html>
-<html lang="pt_br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <title>Lista de tarefas</title>
-</head>
+    <html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./assets/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <title>Lista de tarefas</title>
+    </head>
+    
+    <body>
+        <main class="container">
+            <h2>Lista de tarefas</h2>
+    
+            <!-- Input -->
+            <form id="form">
+                <p id="inputAlert"></p>
+                <input type="text" id="userInput" placeholder="Digite uma nova tarefa...">
+                <button type="button" id="btn" onclick="btnAdd()" class="btn">Adicionar</button> 
+            </form>
+    
+            <!-- Lista de tarefas do usuário -->
+            <section id="listSelect" class="containerList">
+                <ul id="userList"></ul>
+            </section>
 
-<body>
-    <main class="container">
-        <h2>Lista de tarefas</h2>
-
-        <!-- Input -->
-
-        <form id="form">
-            <p id="inputAlert"></p>
-            <input type="text" id="userInput" placeholder="Digite uma nova tarefa...">
-            <button type="button" onclick="btnAdd()" class="btn">Add</button> 
-        </form>
-
-        <!-- Lista de tarefas do usuário -->
-        <section id="listSelect" class="containerList">
-            <ul id="userList"></ul>
-        </section>
-        <!-- Botões para selecionar e limpar -->    
-
-        <footer class="btnContainer" id="btnContainer">
-            <span class="btn" id="checkAll">Marcar todas como concluídas</span>
-            <span class="btn" id="eraseAll">Limpar lista</span>
-        </footer>
-    </main>
-    <script src="./assets/script.js"></script>
-</body>
-</html>
-
+            <!-- Botões para selecionar e limpar -->    
+            <footer class="btnContainer" id="btnContainer">
+                <span class="btnFooter" id="checkAll">Marcar todas como concluídas</span>
+                <span class="btnFooter" id="eraseAll">Limpar lista</span>
+            </footer>
+        </main>
+        <script src="./assets/script.js"></script>
+    </body>
+    </html>

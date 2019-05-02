@@ -3,7 +3,14 @@
     const footer = document.getElementById("btnContainer");
     footer.style.display = "none";
 
+    window.addEventListener("keypress", function(event) {
+        if (event.key == "Enter") {
+            btnAdd();
+        }
+    });
+
 function btnAdd() {
+    const add = document.getElementById("btn");
 
     // Definindo a mãe
     const lista = document.getElementById("userList");
@@ -17,24 +24,25 @@ function btnAdd() {
     // Criar texto 
     const texto = document.createTextNode(valorInput);
 
-    
-    
     // previne que o submit apague o input
     event.preventDefault();
 
     // Mensagem de erro 
-    const error = document.getElementById("inputAlert")
+    const error = document.getElementById("inputAlert");
 
-    
    
     //validação do input do usuário
         if(userInput.value.length == 0 || userInput.value.replace(/\s+/g, "").length == 0){
             error.innerHTML = 'Erro! Digite um texto válido.';
+            error.style.display = "block";
             
-            return;
+        return;
     } else if (userInput.value.length != 0 || userInput.value.replace(/\s+/g, "").length != 0) {
         error.style.display = "none";
         footer.style.display = "flex";
+
+        // Tirar o arredondado do botão 
+        add.style.borderRadius = '0px';
     };
 
       // Anexar texto ao elemento
@@ -43,40 +51,44 @@ function btnAdd() {
       // Anexar o elemento filho (novo item) à mãe (ul)
       lista.appendChild(item)
 
+   
 
-    // Cria botão para apagar individualmente
-    const eraser = document.getElementsByTagName("li");
-    let i;
-    for (i = 0; i < eraser.length; i++) {
-        const span = document.createElement("span");
-        const txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        eraser[i].appendChild(span);
-    }
+    //Cria botão para apagar individualmente
+    const removeItem = document.createElement("a")
+
+    removeItem.innerHTML = "\u00D7"
+    removeItem.setAttribute("href", "#")
+    item.appendChild(removeItem) 
+    
+    removeItem.addEventListener("click", function() {
+        item.remove();
+    });
+
 
     // Riscar itens feitos
     item.addEventListener('click', function () {
         item.className = "checked"
     });
+ 
 
-    /* Marcar todas como concluídas
-    Fica tudo em branco ao invés de puxar a classe
+    //Marcar todas como concluídas
         const selectAll = document.getElementById("checkAll");
-        const listSelect = document.getElementById("listSelect")
 
         selectAll.addEventListener("click", function() {
-        listSelect.className = "checked"
-        }); */
+        item.className = "checked"
+        
+        }); 
 
-    //Limpar lista
-    //Depois que limpa, não add mais
-    const eraseAll = document.getElementById("eraseAll");
-    const listSelect = document.getElementById("listSelect")
 
-    eraseAll.addEventListener("click", function() {
-    listSelect.remove();
-    
-    });
-    
+    //Apagar tudo
+        const eraseAll = document.getElementById("eraseAll");
+
+        eraseAll.addEventListener("click", function() {
+            item.remove()
+            footer.style.display = "none";
+            add.style.borderRadius = "0 0 15px 15px"
+        });
+
+        // Limpar o input
+        userInput.value = "";
 }
