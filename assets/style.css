@@ -8,6 +8,7 @@ body{
     background: linear-gradient(100deg, #e0c3fc, #8ec5fc);
     background-attachment: fixed;
     background-repeat: no-repeat; 
+    height: 100vh;
 }
 
 h2 {
@@ -113,14 +114,11 @@ a {
     text-transform: uppercase;
     border-radius: 5px;
     font-weight: 700;
-    margin-right: 30px;
+    
     cursor: pointer;
 }
 
-.btnFooter:hover {
-    background-color: #421370;
-    color: #ffffff;
-}
+
 
 
 .checked{

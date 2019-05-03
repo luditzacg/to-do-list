@@ -109,12 +109,14 @@ function btnAdd() {
         }
 
         function dragOver(event) {
-            const location = event.target.closest("li"); // pegar pela classe!!
-            this.parentNode.insertBefore(dragging, location);// this.parentNode equivale a class timeline
+            const location = event.target.closest("li"); 
+            
+            // this.parentNode equivale a class timeline
+            this.parentNode.insertBefore(dragging, location); 
         }
+
+        //usamos o dragging = null para dizer que deve parar o movimento
         function dragEnd() {
             dragging = null;
-            //usamos o dragging = null para dizer que deve parar o movimento
-
         }
 }
